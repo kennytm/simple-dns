@@ -128,6 +128,11 @@ impl<'a> SVCB<'a> {
                 .collect(),
         }
     }
+
+    /// Removes a parameter. Returns the removed parameter if it exists.
+    pub fn remove_param(&mut self, key: u16) -> Option<SVCParam<'a>> {
+        self.params.remove(&key)
+    }
 }
 
 impl<'a> WireFormat<'a> for SVCB<'a> {
